@@ -38,9 +38,32 @@ const sphereGeometry = new THREE.SphereGeometry(1)
 const sphereMaterial = new THREE.MeshNormalMaterial()
 const testsphere = new THREE.Mesh(sphereGeometry, sphereMaterial)
 
-scene.add(testsphere)
+//scene.add(testsphere)
+
+// adding cube
+
+// test cube
+
+const cubeGeometry = new THREE.BoxGeometry(1, 1, 1)
+const cubeMaterial = new THREE.MeshNormalMaterial()
+
+const testCube = new THREE.Mesh(cubeGeometry, cubeMaterial)
+
+const testCube2 = new THREE.Mesh(cubeGeometry, cubeMaterial)
 
 
+scene.add(testCube)
+
+scene.add(testCube2)
+
+
+//adding torus
+
+const torusGeometry = new THREE.TorusGeometry(2.5, 0.2, 300, 100)
+const torusMaterial = new THREE.MeshBasicMaterial()
+const testTorus = new THREE.Mesh(torusGeometry, torusMaterial)
+
+// scene.add(testTorus)
 
 /* Animation Loop */
 
@@ -52,8 +75,38 @@ const animation = () =>{
     // return elapsed time
     const elapsedTime = clock.getElapsedTime()
 
+
+    //animate test cube
+    testCube.rotation.x = elapsedTime
+    testCube.rotation.y = elapsedTime
+    testCube.rotation.z = elapsedTime
+
+
+    testCube2.rotation.x = elapsedTime
+    testCube2.rotation.y = elapsedTime
+    testCube2.rotation.z = elapsedTime
+
+    //scale cube - increasing the size of the cube gradually
+    // testCube.scale.x = Math.sin(elapsedTime * 0.5) * 2
+    // testCube.scale.y = Math.sin(elapsedTime * 0.5) * 2
+    // testCube.scale.z = Math.sin(elapsedTime * 0.5) * 2
+
+
+    //animate torus
+    // testTorus.scale.x = elapsedTime
+    // testTorus.scale.y = elapsedTime
+    // testTorus.scale.z = elapsedTime
+
+    //rotate torus
+    testTorus.rotation.y = elapsedTime
+
+
+
     // Animate testsphere
-    testsphere.position.z = Math.sin(elapsedTime)
+    testsphere.position.z = Math.sin(elapsedTime * 2) * 3 //elapsed time times 2 makes the object go faster within the place, for the object to go further it is the formula times the number
+
+    testCube.position.x = -2
+    testCube2.position.x = 2
 
 
     // renderer
