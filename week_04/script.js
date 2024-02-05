@@ -76,13 +76,15 @@ const material = new THREE.MeshNormalMaterial({
 })
 const testSphere = new THREE.Mesh(geometry, material)
 
+scene.add(testSphere)
+
 // CylinderGeometry
 
 const cylinder_geometry = new THREE.CylinderGeometry( 5, 5, 14, 20, 42 ); 
 const cylinder_material = new THREE.MeshBasicMaterial(); 
 const cylinder = new THREE.Mesh( cylinder_geometry, cylinder_material ); 
 
-scene.add( cylinder );
+// scene.add( cylinder );
 
 
 // const torus_geometry = new THREE.TorusGeometry()
@@ -103,6 +105,7 @@ uiObject.speed = 0.5
 uiObject.distance = 2
 
 // uiObject.reset = () =>{
+    uiObject
 
 // }
 
