@@ -2,9 +2,9 @@ import * as THREE from "three"
 import * as dat from "lil-gui"
 import { OrbitControls } from "OrbitControls"
 
-/**********
-** SETUP **
-***********/
+
+// SETUP
+
 // Sizes
 const sizes = {
     width: window.innerWidth,
@@ -12,9 +12,8 @@ const sizes = {
     aspectRatio: window.innerWidth / window.innerHeight
 }
 
-/**********
-** SCENE **
-***********/
+// SCENE 
+
 // Canvas
 const canvas = document.querySelector('.webgl')
 
@@ -44,9 +43,8 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 
-/***********
-** MESHES **
-************/
+//MESHES
+
 const caveMaterial = new THREE.MeshStandardMaterial({
     color: new THREE.Color('white'),
     side: THREE.DoubleSide
@@ -75,7 +73,9 @@ caveFloor.position.set(0, -2.5, 0)
 scene.add(caveFloor)
 
 // OBJECTS
+
 // torusKnot
+
 const torusKnotGeometry = new THREE.TorusKnotGeometry(1, 0.2)
 const torusKnotMaterial = new THREE.MeshNormalMaterial()
 const torusKnot = new THREE.Mesh(torusKnotGeometry, torusKnotMaterial)
@@ -92,16 +92,15 @@ const sunMaterial = new THREE.MeshLambertMaterial({
 const sun = new THREE.Mesh(sunGeometry, sunMaterial)
 scene.add(sun)
 
-/***********
-** LIGHTS **
-************/
-/*
-// Ambient Light
-const ambientLight = new THREE.AmbientLight(
-    new THREE.Color('white')
-)
-scene.add(ambientLight)
-*/
+// LIGHTS
+
+//
+// // Ambient Light
+// const ambientLight = new THREE.AmbientLight(
+//     new THREE.Color('white')
+// )
+// scene.add(ambientLight)
+// 
 
 // Direcional Light
 const directionalLight = new THREE.DirectionalLight(
@@ -119,9 +118,9 @@ scene.add(directionalLight)
 //const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight)
 //scene.add(directionalLightHelper)
 
-/*******
-** UI **
-********/
+//UI
+
+
 const ui = new dat.GUI()
 
 const uiObject = {}
@@ -157,9 +156,9 @@ lightPositionFolder
     .name('Reset position')
 
 
-/*******************
-** ANIMATION LOOP **
-********************/
+
+// ANIMATION LOOP 
+
 const clock = new THREE.Clock()
 
 // Animate
