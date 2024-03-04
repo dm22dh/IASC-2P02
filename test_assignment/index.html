@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plato Prototype</title>
-
-    <!-- css -->
-    <link rel="stylesheet" href="style.css">
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Assignment 01</title>
+        <link rel="stylesheet" href="style.css">
+    
     <!-- three.js importmap -->
     <script type="importmap">
         {
@@ -18,16 +16,37 @@
             }
         }
     </script>
-
-    <!-- three.js scene -->
-    <script src="script.js" type="module"></script>
-</head>
-
-<body>
     
-    <h1>Plato Prototype</h1>
-
-    <canvas class="webgl"></canvas>
+        <!-- three.js scene -->
     
-</body>
+        <script src="script.js" type="module"></script>
+    </head>
+    <body>
+        <h1>Interactive Essay</h1>
+        <h2>Dimple Mistry</h2>
+    
+        <!-- part one -->
+        <section id="part-one">
+            <h2>1. Flatness</h2>
+    
+            <p>First paragraph goes here. All of a sudden <span class="clickable" id="first-change">the object began to move strangely</span>.</p>
+    
+            <p>Second paragraph goes here. And then, <span class="clickable" id="second-change">the object fell off the face of the earth</span>.</p>
+    
+            <p><span class="clickable" id="continue-reading">Continue reading</span></p>
+        </section>
+    
+        <!-- part two -->
+        <section id="part-two" class="hidden">
+            <h2>2. Seeing Double</h2>
+    
+            <p>First paragraph goes here. But then, <span class="clickable" id="third-change">the object came to rest</span>.</p>
+    
+            <p>Second paragraph goes here. And then, <span class="clickable" id="fourth-change">the sun began to set behind it,</span> mystifying the people in the cave.</p>
+    
+            <p><span class="clickable" id="restart">Restart</span></p>
+        </section>
+    
+        <canvas class="webgl"></canvas>
+    </body>
 </html>
