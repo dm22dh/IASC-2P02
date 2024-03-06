@@ -2,7 +2,8 @@ body {
     width: 40%;
     color: white;
     margin-left: 5%;
-    text-shadow: 0.5px 0.5px 1px #ffffff;
+    /* text-shadow: 0.5px 0.5px 1px #ffffff; */
+    font-family: Arial, sans-serif;
 }
 
 h1 {
@@ -17,8 +18,9 @@ h2 {
 }
 
 p {
-    font-size: 28px;
+    font-size: 22px;
     margin-bottom: 24px;
+    line-height: 1.5;
 }
 
 .clickable {
