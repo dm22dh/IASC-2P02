@@ -33,3 +33,7 @@ h1 {
 #lil-gui-name-3, #lil-gui-name-7 {
     color: blue;
 }
+
+.lil-gui .controller.string input {
+    color: white;
+}
