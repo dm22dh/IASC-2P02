@@ -90,9 +90,9 @@ let preset = {}
 const uiobj = {
     text: '',
     textArray: [],
-    term1: 'cupboard',
-    term2: 'hat',
-    term3: 'broom',
+    term1: 'coppy',
+    term2: 'allardyce',
+    term3: 'din',
     rotateCamera: false
 }
 
@@ -141,7 +141,7 @@ const findTermInParsedText = (term, material) =>
 }
 
 // Load source text
-fetch("https://raw.githubusercontent.com/amephraim/nlp/master/texts/J.%20K.%20Rowling%20-%20Harry%20Potter%201%20-%20Sorcerer's%20Stone.txt")
+fetch("https://raw.githubusercontent.com/dm22dh/IASC-2P02/main/assignment_02/Wee%20Willie%20Winkie.txt")
     .then(response => response.text())
     .then((data) =>
     {
