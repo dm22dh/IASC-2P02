@@ -2,9 +2,8 @@ import * as THREE from "three"
 import * as dat from "lil-gui"
 import { OrbitControls } from "OrbitControls"
 
-/**********
-** SETUP **
-***********/
+/** SETUP **/
+
 // Sizes
 const sizes = {
     width: window.innerWidth / 2.5,
@@ -12,9 +11,8 @@ const sizes = {
     aspectRatio: 1
 }
 
-/***********
-** SCENE **
-***********/
+/** SCENE **/
+
 // Canvas
 const canvas = document.querySelector('.webgl')
 
@@ -43,16 +41,14 @@ renderer.setSize(sizes.width, sizes.height)
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 
-/***********
-** LIGHTS **
-************/
+/** LIGHTS **/
+
 // Directional Light
 const directionalLight = new THREE.DirectionalLight(0x404040, 100)
 scene.add(directionalLight)
 
-/***********
-** MESHES **
-************/
+/** MESHES **/
+
 // Cube Geometry
 const cubeGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5)
 
@@ -82,9 +78,7 @@ const drawCube = (i, material) =>
 }
 
 
-/**********************
-** TEXT PARSERS & UI **
-***********************/
+/** TEXT PARSERS & UI **/
 let preset = {}
 
 const uiobj = {
@@ -102,11 +96,9 @@ const parseTextandTerms = () =>
 {
     // Strip periods and downcase text
     const parsedText = uiobj.text.replaceAll(".", "").toLowerCase()
-    //console.log(parsedText)
 
     // Tokenize text
     uiobj.textArray = parsedText.split(/[^\w']+/)
-    //console.log(uiobj.textArray)
 
     // Find term 1
     findTermInParsedText(uiobj.term1, redMaterial)
@@ -116,26 +108,20 @@ const parseTextandTerms = () =>
 
     // Find term 3
     findTermInParsedText(uiobj.term3, blueMaterial)
-
 }
 
 const findTermInParsedText = (term, material) =>
 {
     for (let i=0; i < uiobj.textArray.length; i++)
     {
-        //console.log(i, uiobj.textArray[i])
         if(uiobj.textArray[i] === term)
         {
-         //console.log(i, term)
-         // convert i into n, which is a value between 0 and 20
          const n = (100 / uiobj.textArray.length) * i * 0.2
          
-         // call drawCube function 5 times using converted n value
          for(let a=0; a < 5; a++)
          {
             drawCube(n, material)
          }
-
         }
     }
 }
@@ -178,9 +164,7 @@ const ui = new dat.GUI({
         .add(uiobj, 'rotateCamera')
         .name('Rotate Camera')
 
-/*******************
-** ANIMATION LOOP **
-********************/
+/** ANIMATION LOOP **/
 const clock = new THREE.Clock()
 
 // Animate
